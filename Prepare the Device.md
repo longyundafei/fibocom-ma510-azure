@@ -12,11 +12,12 @@ Connected device with USB cable
 
  ![](./picture/ma510-connect-ant.png)
 
-2-
+2-Connect the device to the USB cable
 
  ![](./picture/ma510-connect-usb.png)
  
-3-
+3-Connect the device to the USB cable and connect to the PC
+
  ![](./picture/ma510-connect.png)
  
 ## Software Environmental Setup 
