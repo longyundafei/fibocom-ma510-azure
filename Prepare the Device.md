@@ -4,8 +4,19 @@
 
 Materials prepared: MA510
 
+ ![](./picture/ma510-device.png)
+
 Connected device with USB cable
 
+1-Connect the device to the main antenna
+
+ ![](./picture/ma510-connect-ant.png)
+
+2-
+
+ ![](./picture/ma510-connect-usb.png)
+ 
+3-
  ![](./picture/ma510-connect.png)
  
 ## Software Environmental Setup 
@@ -98,5 +109,4 @@ The path of that location (/datax) must be configured in oem_app_path.ini (pseud
  
  ![](./picture/app-start-setting.jpg)
 
--   
 
