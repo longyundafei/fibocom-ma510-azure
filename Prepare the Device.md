@@ -95,6 +95,7 @@ Use EFS Explorer in QPST to copy the created executable (.bin) to /datax in the 
 
 The path of that location (/datax) must be configured in oem_app_path.ini (pseudo name), which is located in /datax
  ![](./picture/ap-efs.png)
+ 
  ![](./picture/app-start-setting.jpg)
 
 -   
