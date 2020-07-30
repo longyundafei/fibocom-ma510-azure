@@ -38,6 +38,7 @@
                     - [示例效率高但程序不简洁](#示例效率高但程序不简洁)
         - [for语句的循环控制变量](#for语句的循环控制变量)
                     - [循环变量属于半开半闭区间](#循环变量属于半开半闭区间)
+                    - [循环变量属于闭区间](#循环变量属于闭区间)
         - [switch语句](#switch语句)
         - [goto语句](#goto语句)
     - [常量](#常量)
@@ -323,7 +324,7 @@ other();
 - ‘，’之后要留空格，如Function(x, y,
 z)。如果‘;’不是一行的结束符号，其后要留空格，如
 ```c
-for (i = 1; i \< 10; ++i)。
+for (i = 1; i < 10; ++i)。
 ```
 - 赋值操作符、比较操作符、算术操作符、逻辑操作符、位域操作符，如“=”、“+=”
 “\>=”、“\<=”、“+”、“\*”、“%”、“&&”、“\|\|”、“\<\<”,“\^”等二元操作符的前后应当加空格。
@@ -336,10 +337,10 @@ for (i = 1; i \< 10; ++i)。
 
 对于表达式比较长的for语句和if语句，为了紧凑起见可以适当地去掉一些空格，如
 ```c
-for(i=0; i\<10; i++)
+for(i=0; i<10; i++)
 ```
 ```c
-if ((a\<=b) && (c\<=d))
+if ((a<=b) && (c<=d))
 ```
 ###### 代码行内的空格
 ```c
@@ -506,8 +507,8 @@ for (very_longer_initialization;
 
 例如：
 ```c
-    char  \*name;
-    int   \*x, y;  // 此处y不会被误解为指针
+    char  *name;
+    int   *x, y;  // 此处y不会被误解为指针
 ```
 ### 注释
 
@@ -659,9 +660,9 @@ C语言的运算符有数十个，运算符的优先级与结合律如表4-1所�
 
 例如：
 ```c
-word = (high \<\< 8) \| low
+word = (high << 8) | low
 
-if ((a \| b) && (a & c)) 
+if ((a | b) && (a & c)) 
 ```
 
 建议：
@@ -682,14 +683,14 @@ a = b = c = 0
 
 例如：
 ```c
-    i \^= j \^= i \^= j;
+    i ^= j ^= i ^= j;
 ```
 
 - 不要编写太复杂的复合表达式。
 
 例如：
 ```c
-    i = a \>= b && c \< d && c + f \<= g + h ;  // 复合表达式过于复杂
+    i = a >= b && c < d && c + f <= g + h ;  // 复合表达式过于复杂
 ```
 - 不要有多用途的复合表达式。
 
@@ -707,11 +708,11 @@ a = b = c = 0
 
 例如： 
 ```c
-    if (a \< b \< c)                     // a \< b \< c是数学表达式而不是程序表达式
+    if (a < b < c)                     // a < b < c是数学表达式而不是程序表达式
     //并不表示      
-    if ((a\<b) && (b\<c))
+    if ((a<b) && (b<c))
     //而是成了令人费解的
-    if ( (a\<b)\<c )
+    if ( (a<b)<c )
 ```
 ### if语句
 
@@ -762,7 +763,7 @@ if (!value)
 
 例如：
 ```c
- 10.0 \* 0.1 == 1.0 ， 
+ 10.0 * 0.1 == 1.0 ， 
  ```
  
 此写法不可靠，应该设法转化成“\>=”或“\<=”形式。
@@ -773,7 +774,7 @@ if (x == 0.0)                            // 隐含错误的比较
 ```
 转化为
 ```c
-if ((x\>=-EPSINON) && (x\<=EPSINON))
+if ((x>=-EPSINON) && (x<=EPSINON))
 ```
 其中EPSINON是允许的误差（即精度）。
 
@@ -882,10 +883,10 @@ else
 
 建议for语句的循环控制变量的取值采用“半开半闭区间”写法。
 
-示例4-5(a)中的x值属于半开半闭区间“0 =\< x \<
+[循环变量属于半开半闭区间](#循环变量属于半开半闭区间)中的x值属于半开半闭区间“0 =\< x \<
 N”，起点到终点的间隔为N，循环次数为N。
 
-示例4-5(b)中的x值属于闭区间“0 =\< x \<=
+[循环变量属于闭区间](#循环变量属于闭区间)中的x值属于闭区间“0 =\< x \<=
 N-1”，起点到终点的间隔为N-1，循环次数为N。
 
 相比之下，[循环变量属于半开半闭区间](#循环变量属于半开半闭区间)的写法更加直观，尽管两者的功能是相同的。 
@@ -897,6 +898,7 @@ for (int x=0; x<N; x++)
 …
 }
 ```
+###### 循环变量属于闭区间
 ```c
 //循环变量属于闭区间
 for (int x=0; x<=N-1; x++)
@@ -1019,7 +1021,7 @@ float GetValue();                        // 不良的风格
 
 例如编写字符串拷贝函数StringCopy，它有两个参数。如果把参数名字起为str1和str2，例如
 ```c
-void StringCopy(char \*str1, char \*str2);
+void StringCopy(char *str1, char *str2);
 ```
 那么我们很难搞清楚究竟是把str1拷贝到str2中，还是刚好倒过来。
 
@@ -1029,7 +1031,7 @@ void StringCopy(char \*str1, char \*str2);
 
 如果将函数声明为：
 ```
-void StringCopy(char \*strSource, char \*strDestination);
+void StringCopy(char *strSource, char *strDestination);
 ```
 别人在使用时可能会不假思索地写成如下形式：
 ```c
@@ -1041,7 +1043,7 @@ StringCopy(str, “Hello World”);          // 参数顺序颠倒
 
 例如：
 ```c
-void StringCopy(char \*strDestination，const char \*strSource);
+void StringCopy(char *strDestination，const char *strSource);
 ```
 - 不要传递数据量很大的结构体数据，应改为结构体指针传递。
 
@@ -1082,7 +1084,7 @@ int getchar(void);
 
 例如字符串拷贝函数strcpy的原型：
 ```c
-char \*strcpy(char \*strDest，const char \*strSrc);
+char \*strcpy(char *strDest，const char *strSrc);
 ```
 strcpy函数将strSrc拷贝至输出参数strDest中，同时函数的返回值又是strDest。这样做并非多此一举，可以获得如下灵活性：
 ```c
@@ -1108,7 +1110,7 @@ strcpy函数将strSrc拷贝至输出参数strDest中，同时函数的返回值�
 
 （1）return语句不可返回指向“栈内存”的“指针”，因为该内存在函数体结束时被自动销毁。例如
 ```c
-    char \* Func(void)
+    char * Func(void)
 
     {
 
@@ -1223,9 +1225,9 @@ C程序中，指针和数组在不少地方可以相互替换着用，让人产�
 
 - 指针变量没有被初始化。任何指针变量刚被创建时不会自动成为NULL指针，它的缺省值是随机的，它会乱指一气。所以，指针变量在创建的同时应当被初始化，要么将指针设置为NULL，要么让它指向合法的内存。例如
 ```c
-    char \*p = NULL;
+    char *p = NULL;
 
-    char \*str = (char \*) malloc(100);
+    char *str = (char *) malloc(100);
 ```
 
 - 指针p被free之后，没有置为NULL，让人误以为p是个合法的指针。 
