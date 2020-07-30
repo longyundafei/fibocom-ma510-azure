@@ -23,7 +23,7 @@
 /******************************************************************************
  Copyright (C), 2010, Shenzhen G&T Industrial Development Co., Ltd
  File: cmd_sock.c
- Author: shumin
+ Author: jack
  Version: 1.0
  Date: 2009.03
  Description: network APIs 
@@ -338,17 +338,71 @@ b->Function();                           // 不要写成 b -> Function();
 
 - \#define的各个字段对齐
 
-示例2-4（a）为风格良好的对齐，示例2-4（b）为风格不良的对齐。
+###### 对齐示例
+```c
+void Function(int x)
+{
+… // program code
+}
+```
+```c
+if (condition)
+{
+… // program code
+}
+else
+{
+… // program code
+}
+```
+```c
+for (initialization; condition; update)
+{
+… // program code
+}
+```
+```c
+While (condition)
+{
+… // program code
+}
+```
+```c
+//出现嵌套的｛｝，则使用缩进对齐
+{
+    …
+   {
+      …
+   }
+   …
+}
+```
 
-| void Function(int x) { … // program code }                              | void Function(int x){ … // program code }                      |
-|-------------------------------------------------------------------------|----------------------------------------------------------------|
-| if (condition) { … // program code } else { … // program code }         | if (condition){ … // program code } else { … // program code } |
-| for (initialization; condition; update) { … // program code }           | for (initialization; condition; update){ … // program code }   |
-| While (condition) { … // program code }                                 | while (condition){ … // program code }                         |
-| 如果出现嵌套的｛｝，则使用缩进对齐，如： {    …    {       …    }   … } |                                                                |
+----------------------------------------------------------------------
 
-示例2-4(a) 风格良好的对齐         示例2-4(b) 风格不良的对齐
-
+```c
+void Function(int x){
+… // program code
+}
+```
+```c
+if (condition){
+… // program code
+}
+else {
+… // program code
+}
+```
+```c
+for (initialization; condition; update){
+… // program code
+}
+```
+```c
+while (condition){
+… // program code
+}
+```
  
 
 ### 长行拆分
