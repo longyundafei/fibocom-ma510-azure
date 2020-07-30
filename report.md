@@ -665,6 +665,7 @@ a = b = c = 0
 C++ 将TRUE定义为1，而Visual Basic则将TRUE定义为-1。
 
 假设布尔变量名字为flag，它与零值比较的标准if语句如下：
+
 ```c
 if (flag)       // 表示flag为真
 
