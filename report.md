@@ -529,7 +529,7 @@ if (…)
 
 例如：
 ```c
-int  x,  X;      // 变量x 与 X 容易混淆
+int  x,  X;         // 变量x 与 X 容易混淆
 
 void foo(int x);    // 函数foo 与FOO容易混淆
 
@@ -661,9 +661,9 @@ C++ 将TRUE定义为1，而Visual Basic则将TRUE定义为-1。
 
 假设布尔变量名字为flag，它与零值比较的标准if语句如下：
 ```c
-if (flag)    // 表示flag为真
+if (flag)       // 表示flag为真
 
-if (!flag)    // 表示flag为假
+if (!flag)      // 表示flag为假
 ```
 
 其它的用法都属于不良风格，例如：
@@ -720,19 +720,19 @@ if ((x\>=-EPSINON) && (x\<=EPSINON))
 指针变量的零值是“空”（记为NULL）。尽管NULL的值与0相同，但是两者意义不同。假设指针变量的名字为p，它与零值比较的标准if语句如下：
 ```c
 
-        if (p == NULL)    // p与NULL显式比较，强调p是指针变量
+    if (p == NULL)      // p与NULL显式比较，强调p是指针变量
 
-        if (p != NULL)
+    if (p != NULL)
 ```
 不要写成
 ```c
-        if (p == 0)   // 容易让人误解p是整型变量
+    if (p == 0)         // 容易让人误解p是整型变量
 
-        if (p != 0)    
+    if (p != 0)    
 ```
     或者
 ```c
-    if (p)            // 容易让人误解p是布尔变量
+    if (p)              // 容易让人误解p是布尔变量
 
     if (!p)           
 ```
