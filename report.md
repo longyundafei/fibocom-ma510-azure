@@ -881,7 +881,7 @@ for (int x=0; x<=N-1; x++)
 
 例如：
 ```c
-    \#define            MAX   100     /\*  C语言的宏常量  \*/
+#define            MAX   100     /*  C语言的宏常量  */
 ```
 - 需要对外公开的常量放在头文件中，不需要对外公开的常量放在定义文件的头部。为便于管理，可以把不同模块的常量集中存放在一个公共的头文件中。
 
@@ -889,9 +889,9 @@ for (int x=0; x<=N-1; x++)
 
 例如：
 ```c
-\#define RADIUS 100
+#define RADIUS 100
 
-\#define DIAMETER RADIUS \* 2
+#define DIAMETER RADIUS * 2
 ```
 - 常量定义（DEFINE）应该有相应说明
 
@@ -899,36 +899,37 @@ for (int x=0; x<=N-1; x++)
 
 函数注释通常置于每函数或过程的开头部分，它应当给出函数或过程的整体说明对于理解程序本身具有引导作用。一般包括如下条目:
 
-——模块标题。
+— 模块标题。
 
-——有关本模块功能和目的的说明。
+— 有关本模块功能和目的的说明。
 
-——调用格式
+— 调用格式
 
-——接口说明：包括输入、输出、返回值、异常。
+— 接口说明：包括输入、输出、返回值、异常。
 
-——算法。如果模块中采用了一些复杂的算法。
+— 算法。如果模块中采用了一些复杂的算法。
 
 例：
 
 file://（注释开头应和上一函数空两行）
 
 （注释开头与上一函数最后一行间隔两行）
+```c
 
-/\*\* GPRS Show PDP Address handler.
+/** GPRS Show PDP Address handler.
 
-\* Called on a CGPADDR=[...] command.
+* Called on a CGPADDR=[...] command.
 
-\* \@param pGprs Pointer to GPRS controller instance data
+* @param pGprs Pointer to GPRS controller instance data
 
-\* \@param pMssg Pointer to CGPADDR message
+* @param pMssg Pointer to CGPADDR message
 
-\* \@return ATC status
+* @return ATC status
 
-\*/
+*/
+```
 
-函数接口的两个要素是参数和返回值。C语言中，函数的参数和返回值的传递方式有两种：值传递（pass
-by value）和指针传递（pass by pointer）。
+函数接口的两个要素是参数和返回值。C语言中，函数的参数和返回值的传递方式有两种：值传递（pass by value）和指针传递（pass by pointer）。
 
 ### 参数的规则
 
