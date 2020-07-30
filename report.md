@@ -340,13 +340,13 @@ b->Function();                           // 不要写成 b -> Function();
 
 ###### 对齐示例
 ```c
-void Function(int x)
+void Function(int x)                     // 良好的风格
 {
 … // program code
 }
 ```
 ```c
-if (condition)
+if (condition)                           // 良好的风格
 {
 … // program code
 }
@@ -356,20 +356,20 @@ else
 }
 ```
 ```c
-for (initialization; condition; update)
+for (initialization; condition; update)  // 良好的风格
 {
 … // program code
 }
 ```
 ```c
-While (condition)
+While (condition)                        // 良好的风格
 {
 … // program code
 }
 ```
 ```c
 //出现嵌套的｛｝，则使用缩进对齐
-{
+{                                        // 良好的风格
     …
    {
       …
@@ -381,12 +381,12 @@ While (condition)
 ----------------------------------------------------------------------
 
 ```c
-void Function(int x){
+void Function(int x){                    // 不良的风格
 … // program code
 }
 ```
 ```c
-if (condition){
+if (condition){                          // 不良的风格
 … // program code
 }
 else {
@@ -394,12 +394,12 @@ else {
 }
 ```
 ```c
-for (initialization; condition; update){
+for (initialization; condition; update){ // 不良的风格
 … // program code
 }
 ```
 ```c
-while (condition){
+while (condition){                       // 不良的风格
 … // program code
 }
 ```
