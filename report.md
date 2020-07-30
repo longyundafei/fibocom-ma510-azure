@@ -140,6 +140,7 @@ void Function1(…)
 在一个函数体内，逻揖上密切相关的语句之间不加空行，其它地方应加空行分隔。参见[函数内部的空行](#函数内部的空行)
 
 2.1.2: 文件中不得存在无规则的空行，比如说连续十个空行
+###### 函数之间的空行 
 ```c
 // 空行
 void Function1(…)
@@ -157,8 +158,8 @@ void Function3(…)
   …
 }
 ```
-###### 函数之间的空行 
 
+###### 函数内部的空行
 ```c
 // 空行
 while (condition)
@@ -178,8 +179,6 @@ while (condition)
 }  
 
 ```
-
-###### 函数内部的空行
 
 ### 代码行
 
@@ -204,15 +203,51 @@ int height = 10; // 定义并初绐化height
 int depth = 10;     // 定义并初绐化depth
 
 示例2-2（a）为风格良好的代码行，示例2-2（b）为风格不良的代码行。 
+###### 风格良好的代码行 
+```c
+int width;    // 宽度
+int height;   // 高度
+int depth;    // 深度
+```
+```c
+x = a + b;
+y = c + d;
+z = e + f;
+```
+```c
+if (width < height) 
+{
+    dosomething();
+}
+```
+```c
+for (initialization; condition; update)
+{
+dosomething();
+}
+// 空行
+other();
+```
 
-| int width;    // 宽度 int height;   // 高度 int depth;    // 深度            | int width, height, depth; // 宽度高度深度                              |
-|------------------------------------------------------------------------------|------------------------------------------------------------------------|
-| x = a + b; y = c + d; z = e + f;                                             | X ＝ a + b;  y = c + d; z = e + f;                                     |
-| if (width \< height) { dosomething(); }                                      | if (width \< height) dosomething();                                    |
-| for (initialization; condition; update) { dosomething(); } // 空行 other();  | for (initialization; condition; update)      dosomething(); other();   |
 
-示例2-2(a) 风格良好的代码行         示例2-2(b) 风格不良的代码行
+###### 风格不良的代码行
+```c
+int width, height, depth; // 宽度高度深度
+```
+```c
+x ＝ a + b;  y = c + d; z = e + f;
+```
+```c
+if (width < height) dosomething();
+```
+```c
+for (initialization; condition; update)
+     dosomething();
+other();
+ 
+ 
 
+```
  
 
 ### 代码行内的空格
