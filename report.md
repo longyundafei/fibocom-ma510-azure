@@ -61,22 +61,23 @@
 格式来引用非标准库的头文件（编译器将从用户的工作目录开始搜索）。
 
 ###### C头文件的结构
+
 ```c
 // 版权和版本声明
  
-\#ifndef   _COMMAND_SOCKET  // 防止被重复引用
-\#define   _COMMAND_SOCKET
+#ifndef   _COMMAND_SOCKET  // 防止被重复引用
+#define   _COMMAND_SOCKET
  
-\#include <math.h>     // 引用标准库的头文件
+#include <math.h>     // 引用标准库的头文件
 …
-\#include “myheader.h”   // 引用非标准库的头文件
+#include “myheader.h”   // 引用非标准库的头文件
 
-\#define  SKCMD_CLOSE		0    // 宏定义
-\#define  SKCMD_CONNECT		1
+#define  SKCMD_CLOSE		0    // 宏定义
+#define  SKCMD_CONNECT		1
 …
 void Function1(…);   // 全局函数声明
 …
-\#endif
+#endif
 ```
 
 
@@ -654,7 +655,7 @@ a = b = c = 0
     //而是成了令人费解的
     if ( (a\<b)\<c )
 ```
-### if 语句
+### if语句
 
 规则:
 
