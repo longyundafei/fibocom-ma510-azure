@@ -123,17 +123,17 @@
 ```c
 // 版权和版本声明
  
-#ifndef   _COMMAND_SOCKET  // 防止被重复引用
+#ifndef   _COMMAND_SOCKET           // 防止被重复引用
 #define   _COMMAND_SOCKET
  
-#include <math.h>     // 引用标准库的头文件
+#include <math.h>                   // 引用标准库的头文件
 …
-#include “myheader.h”   // 引用非标准库的头文件
+#include “myheader.h”               // 引用非标准库的头文件
 
-#define  SKCMD_CLOSE		0    // 宏定义
+#define  SKCMD_CLOSE		0       // 宏定义
 #define  SKCMD_CONNECT		1
 …
-void Function1(…);   // 全局函数声明
+void Function1(…);                  // 全局函数声明
 …
 #endif
 ```
@@ -155,10 +155,10 @@ void Function1(…);   // 全局函数声明
 ```c
 // 版权和版本声明见示例1-1，此处省略。
  
-#include “graphics.h”     // 引用头文件
+#include “graphics.h”               // 引用头文件
 …
-static char myselfIP[32];    // 静态变量
-int gReceiveLength;          // 全局变量
+static char myselfIP[32];           // 静态变量
+int gReceiveLength;                 // 全局变量
 // 全局函数的实现体
 void Function1(…)
 {
@@ -264,9 +264,9 @@ int depth = 10;     // 定义并初绐化depth
 
 ###### 风格良好的代码行 
 ```c
-int width;    // 宽度
-int height;   // 高度
-int depth;    // 深度
+int width;          // 宽度
+int height;         // 高度
+int depth;          // 深度
 ```
 ```c
 x = a + b;
